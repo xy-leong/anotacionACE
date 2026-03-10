@@ -1,0 +1,58 @@
+{
+    "ACE_SEXUAL_ABUSE": [
+        "abuso sexual", "abusos sexuales", "violación", "agresión sexual", "tocamientos", "abuso sexual infantil",
+        "maltrato sexual", "sexo oral", "penetración", "tocamientos", "voyeurismo", "exhibicionismo", "explotación",
+        "explotación sexual", "víctima de agresión sexual"
+    ],
+    "ACE_PHYSICAL_ABUSE": [
+        "maltrato físico", "golpes", "agresión física", "palizas", "violencia física",
+        "malos tratos físicos", "abuso físico", "golpeado", "patada", "puñetazo", "azotes", 
+        "agitar", "empujar", "arañar", "pellizcar", "morder", "estrangular", "torturar", "quemar", 
+        "lanzar", "sacudir", "síndrome del bebé zarandeado", "síndrome de Munchausen",
+        "víctima de abuso físico", "malos tratos"
+    ],
+    "ACE_EMOTIONAL_ABUSE": [
+        "maltrato psicológico", "abuso emocional", "humillaciones", "insultos", "amenazas",
+        "abuso psicológico", "malos tratos psicológicos", "maltrato emocional", "maltrato verbal",
+        "víctima de abuso emocional", "víctima de abuso psicológico"
+    ],
+    "ACE_PHYSICAL_NEGLECT": [
+        "abandono", "falta de cuidados",  "descuido"
+    ],
+    "ACE_EMOTIONAL_NEGLECT": [
+        "desatención"
+    ],
+    "ACE_UNSPECIFIED_NEGLECT": [
+        "negligencia", "comportamiento negligente", "falta de cuidados" 
+    ],
+    "ACE_DOMESTIC_VIOLENCE_EXPOSURE": [
+        "violencia intrafamiliar", "violencia doméstica", "violencia en casa", "malos tratos en el hogar",
+        "testigo de violencia doméstica"
+    ],
+    "ACE_PARENT_SUBSTANCE": [
+        "padre alcohólico", "madre alcohólica", "consumo de alcohol del padre", "drogadicción del padre",
+        "consumo de drogas en casa"
+    ],
+    "ACE_PARENT_MENTAL_ILLNESS": [
+        "madre con depresión", "padre con depresión", "trastorno mental del padre", "psicosis del padre"
+    ],
+    "ACE_PARENT_INCARCERATION": [
+        "padre en prisión", "madre en prisión", "encarcelamiento del padre",
+        "encarcelamiento de la madre"
+    ],
+    "ACE_PARENT_DIVORCE_SEPARATION": [
+        "divorcio de los padres", "separación de los padres", "padres separados", "padres divorciados"
+    ],
+    "ACE_POVERTY_UNEMPLOYMENT": [
+        "padres desempleados", "padres en paro", "padres sin empleo", 
+        "padre desempleado", "padre en paro", "padre sin empleo", "padre no trabaja",
+        "madre desempleada", "madre en paro", "madre sin empleo", "madre no trabaja", 
+        "sin medios", "medios limitados", "medios económicos limitados" 
+    ],
+    "ACE_GENERAL_TRAUMA": [
+        "adversidad precoz", "trauma precoz", "traumatismo precoz", "evento traumático", "evento adverso",
+        "situación traumática", "vivencia traumática", "antecedente traumático", 
+        "historia de trauma", "experiencia traumática", "suceso traumático",
+        "violencia", "violento", "testigo de violencia", "víctima", "maltrato"
+    ]
+}
