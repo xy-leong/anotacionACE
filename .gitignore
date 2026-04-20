@@ -1,7 +1,8 @@
 # Part ACE Project
 Old code/
 brat_output/
-BIO_entity/
+BIO_ACE/
+BIO_CUE/
 annotations_ace_confirmed_cases_v3.xlsx
 normalized_annotations_ace_confirmed_cases_v2.xlsx
 
