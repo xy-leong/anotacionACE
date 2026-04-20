@@ -1,7 +1,9 @@
 # Part ACE Project
 Old code/
 brat_output/
+BIO_entity/
 annotations_ace_confirmed_cases_v3.xlsx
+normalized_annotations_ace_confirmed_cases_v2.xlsx
 
 # Part anotacionACE
 classify_useful_notes/
