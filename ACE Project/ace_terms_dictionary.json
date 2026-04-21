@@ -2,7 +2,10 @@
     "ACE_SEXUAL_ABUSE": [
         "abuso sexual", "abusos sexuales", "violación", "agresión sexual", "tocamientos", "abuso sexual infantil",
         "maltrato sexual", "sexo oral", "penetración", "tocamientos", "voyeurismo", "exhibicionismo", "explotación",
-        "explotación sexual", "víctima de agresión sexual"
+        "explotación sexual", "víctima de agresión sexual", "abusos sex"
+    ],
+    "ACE_ATTEMPTED_ABUSE": [
+        "intento de abuso sexual", "intento de abuso físico"
     ],
     "ACE_PHYSICAL_ABUSE": [
         "maltrato físico", "golpes", "agresión física", "palizas", "violencia física",
@@ -12,7 +15,7 @@
         "víctima de abuso físico", "malos tratos"
     ],
     "ACE_EMOTIONAL_ABUSE": [
-        "maltrato psicológico", "abuso emocional", "humillaciones", "insultos", "amenazas",
+        "maltrato psicológico", "abuso emocional", "humillaciones", "insultos", "amenaza", "amenazas",
         "abuso psicológico", "malos tratos psicológicos", "maltrato emocional", "maltrato verbal",
         "víctima de abuso emocional", "víctima de abuso psicológico"
     ],
@@ -53,6 +56,6 @@
         "adversidad precoz", "trauma precoz", "traumatismo precoz", "evento traumático", "evento adverso",
         "situación traumática", "vivencia traumática", "antecedente traumático", 
         "historia de trauma", "experiencia traumática", "suceso traumático",
-        "violencia", "violento", "testigo de violencia", "víctima", "maltrato"
+        "violencia", "violento", "testigo de violencia", "víctima", "maltrato", "abusos"
     ]
 }

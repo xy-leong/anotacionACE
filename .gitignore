@@ -1,13 +1,29 @@
 # Part ACE Project
 Old code/
+<<<<<<< Updated upstream
 brat_output/
 BIO_ACE/
 BIO_CUE/
 annotations_ace_confirmed_cases_v3.xlsx
 normalized_annotations_ace_confirmed_cases_v2.xlsx
+=======
+Example annotator.ipynb
+>>>>>>> Stashed changes
 
 # Part anotacionACE
 classify_useful_notes/
 model/
 data/
 Explanation.docx
+
+# All txt files
+*.txt
+
+# All excel files
+*.xlsx
+
+# Bibliography folder
+Bibliography/
+
+# Brat folder
+brat\
