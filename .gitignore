@@ -1,8 +1,10 @@
 # Part ACE Project
 Old code/
 brat_output/
-BIO_ACE/
-BIO_CUE/
+BIO_ACE*/
+BIO_CUE*/
+CUE*/
+brat_annotated_v1/
 annotations_ace_confirmed_cases_v3.xlsx
 normalized_annotations_ace_confirmed_cases_v2.xlsx
 Example annotator.ipynb

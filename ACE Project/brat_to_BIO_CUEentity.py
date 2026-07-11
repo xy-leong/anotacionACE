@@ -23,7 +23,7 @@ def parse_ann_file(ann_path):
                 continue
 
             start = int(tag_info[1])
-            end = int(tag_info[2])
+            end = int(tag_info[2]) if len(tag_info[1:]) == 2 else int(tag_info[-1])
 
             entities.append({
                 "start": start,
@@ -101,4 +101,7 @@ def convert_folder(brat_dir, output_dir):
 
 if __name__ == "__main__":
     BASE_DIR = Path(__file__).resolve().parent
-    convert_folder(BASE_DIR / "brat_output", BASE_DIR / "BIO_CUE")
+    input_dir = BASE_DIR / "brat_annotated_v1"
+    input_dir = Path("C:/Users/ASUS/Berlin/Practicas/ACE/brat/data/brat_annotated_v1_corrected_BA")
+
+    convert_folder(input_dir, BASE_DIR / "BIO_CUE_annotated_v1_correctedBAJ")

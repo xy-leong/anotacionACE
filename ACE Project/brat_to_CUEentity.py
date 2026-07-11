@@ -1,6 +1,7 @@
 import os
 import re
 from pathlib import Path
+import json
 
 
 def parse_ann_file(ann_path):
@@ -18,12 +19,12 @@ def parse_ann_file(ann_path):
             tag_info = parts[1].split()
             label = tag_info[0]
 
-            # --- ONLY ACE ENTITIES
-            if not label.startswith("ACE_"):
+            # --- ONLY CUE ENTITIES
+            if not label.endswith("_CUE"):
                 continue
 
             start = int(tag_info[1])
-            end = int(tag_info[2]) if len(tag_info[1:]) == 2 else int(tag_info[-1])
+            end = int(tag_info[-1]) #if len(tag_info[1:]) == 2 else int(tag_info[-1])
 
             entities.append({
                 "start": start,
@@ -41,40 +42,43 @@ def tokenize_with_offsets(text):
     return tokens
 
 
-def assign_bio_labels(tokens, entities):
-    bio_labels = ["O"] * len(tokens)
+def assign_cue_labels(tokens, entities):
+    cue_types = sorted({
+        ent["label"]
+        for ent in entities
+    })
+
+    labels = {
+        cue: ["O"] * len(tokens)
+        for cue in cue_types
+    }
 
     for ent in entities:
         ent_start = ent["start"]
         ent_end = ent["end"]
-        label = ent["label"]
-
-        first_token = True
+        cue = ent["label"]
 
         for i, (_, start, end) in enumerate(tokens):
 
-            # Skip non-overlapping tokens
             if end <= ent_start or start >= ent_end:
                 continue
 
-            if first_token:
-                bio_labels[i] = f"B-{label}"
-                first_token = False
-            else:
-                bio_labels[i] = f"I-{label}"
+            labels[cue][i] = cue
 
-    return bio_labels
+    return labels
 
-
-def brat_to_bio(txt_path, ann_path):
+def brat_to_dict(txt_path, ann_path):
     with open(txt_path, "r", encoding="utf-8") as f:
         text = f.read()
 
     entities = parse_ann_file(ann_path)
     tokens = tokenize_with_offsets(text)
-    labels = assign_bio_labels(tokens, entities)
+    labels = assign_cue_labels(tokens, entities)
 
-    return [(tok, lab) for (tok, _, _), lab in zip(tokens, labels)]
+    return {
+        "tokens": [tok for tok, _, _ in tokens],
+        **labels
+    }
 
 
 def convert_folder(brat_dir, output_dir):
@@ -87,19 +91,17 @@ def convert_folder(brat_dir, output_dir):
         ann_file = txt_file.with_suffix(".ann")
 
         if not ann_file.exists():
-            failed_files.append((txt_file.name, "Missing .ann file"))
             continue
 
         try:
-            bio_data = brat_to_bio(txt_file, ann_file)
-            if not bio_data:
+            data = brat_to_dict(txt_file, ann_file)
+            if not data:
                 continue
 
-            out_file = output_dir / f"{txt_file.stem}.bio"
+            out_file = output_dir / f"{txt_file.stem}.json"
 
-            with open(out_file, "w", encoding="utf-8", newline="\n") as f:
-                for token, label in bio_data:
-                    f.write(f"{token}\t{label}\n")
+            with open(out_file, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=4)
         except Exception as e:
             failed_files.append((txt_file.name, str(e)))
 
@@ -117,11 +119,9 @@ def convert_folder(brat_dir, output_dir):
     else:
         print("\nNo errors found.")
 
-    # return failed_files
-
 if __name__ == "__main__":
     BASE_DIR = Path(__file__).resolve().parent
-    # input_dir = BASE_DIR / "brat_annotated_v1"
+    input_dir = BASE_DIR / "brat_annotated_v1"
     input_dir = Path("C:/Users/ASUS/Berlin/Practicas/ACE/brat/data/brat_annotated_v1_corrected_BA")
 
-    convert_folder(input_dir, BASE_DIR / "BIO_ACE_annotated_v1_correctedBAJ")
+    convert_folder(input_dir, BASE_DIR / "CUE_annotated_v1_correctedBA")
